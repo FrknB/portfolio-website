@@ -1,10 +1,9 @@
-const navShow = () => {
-    const burger = document.querySelector('.burger');
-    const nav = document.querySelector('.nav-links');
-    
-    burger.addEventListener('click', () => {
-        nav.classList.toggle('nav-active');
-    });
-}
+let toggle = document.getElementById('toggle');
 
-navShow();
+        toggle.addEventListener ('click', () =>{
+            const navbarItems = document.querySelector('.nav-links');
+            const logItems = document.querySelector('.log-items');
+            navbarItems.classList.toggle('active');
+            logItems.classList.toggle('active');
+
+        });

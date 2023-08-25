@@ -53,6 +53,7 @@ body{
     justify-content: space-between;
     background-color: var(--header-color);
     padding: 0 90px;
+    position: relative;
 }
 .logo img{
     width: 160px;
@@ -72,20 +73,13 @@ nav{
 .nav-links a{
     font-size: 20px;
     color: var(--header-links);
-    transition: .2s ease all;
 }
 .nav-links a:hover{
     color: var(--a-color);
 }
-.burger{
-    width: 32px;
-    height: 32px;
+.toggle{
     display: none;
-}
-.burger span{
-    cursor: pointer;
-    font-size: 36px;
-    color: var(--header-links);
+    color: white;
 }
 .content{
     width: 100%;
@@ -310,10 +304,8 @@ nav{
         width: 50%;
         height: calc(60vh - 100px);
         padding: 0 60px;
-        background-color: #383838;
         border-radius: 12px 0  0 12px;
         gap: 20px;
-        transition: .5s ease;
     }
     .nav-links.nav-active a{
         display: flex;
@@ -409,14 +401,16 @@ nav{
     .nav-links{
         display: none;
     }
-    .burger{
-        display: flex;
-    }
     .content{
         height: calc(100vh - 100px);
         padding: 0 20px;
         align-items: center;
         justify-content: center;
+    }
+    .buttons a{
+        font-size: 16px;
+        width: 120px;
+        height: 50px;
     }
     .content-text h1{
         font-size: 28px;
@@ -431,10 +425,8 @@ nav{
         height: calc(100vh - 100px);
         padding: 20px 60px;
         z-index: 99;
-        background-color: #383838;
         border-radius: 12px 0  0 12px;
         gap: 20px;
-        transition: .5s ease;
     }
     .nav-links a{
         border-bottom: 2px solid var(--a-color);
@@ -513,16 +505,48 @@ nav{
         margin: 40px;
     }
 }
+@media screen  and (max-width: 768px){
+    .header {
+        width: 100%;
+        padding: 0 20px;
+        
+    }
+    .header .nav-links{
+        display: none;
+    }
+    .header .nav-links.active{
+        display: flex;
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        gap: 20px;
+        transition: .3s;
+        z-index: 999;
+        background-color: #2e2e2ee8;
+        transition: .3s ease all;
+    }
+    .header .nav-links a{
+        font-size: 14px;
+        margin: 5px 20px;
+        width: 100%;
+        border-bottom: 1px solid #d4d4d4a7;
+        padding: 10px;
+    }
+    .toggle{
+        display: block;
+    }
+}
 @media (min-width:670px) and (max-width: 980px) {
     .header{
         width: 100%;
         padding: 0 40px;
     }
-    .nav-links{
-        display: none;
-    }
-    .burger{
-        display: flex;
+    .nav-links a{
+        font-size: 14px;
     }
     .content{
         height: calc(100vh - 100px);
@@ -532,24 +556,6 @@ nav{
     }
     .content-text h1{
         font-size: 28px;
-    }
-    .nav-links.nav-active{
-        display: flex;
-        position: absolute;
-        flex-direction: column;
-        top: 100px;
-        right: 0;
-        width: 50%;
-        height: calc(100vh - 100px);
-        padding: 40px 60px;
-        z-index: 99;
-        background-color: #383838;
-        border-radius: 12px 0  0 12px;
-        gap: 20px;
-        transition: .5s ease;
-    }
-    .nav-links a{
-        border-bottom: 2px solid var(--a-color);
     }
     .blog-content h1{
         font-size:  22px;
@@ -630,12 +636,6 @@ nav{
         width: 100%;
         padding: 0 40px;
     }
-    .nav-links{
-        display: none;
-    }
-    .burger{
-        display: flex;
-    }
     .content{
         height: calc(100vh - 100px);
         padding: 0 40px;
@@ -644,23 +644,8 @@ nav{
     .content-text h1{
         font-size: 28px;
     }
-    .nav-links.nav-active{
-        display: flex;
-        position: absolute;
-        flex-direction: column;
-        top: 100px;
-        right: 0;
-        width: 50%;
-        z-index: 99;
-        height: calc(100vh - 100px);
-        padding: 40px 60px;
-        background-color: #383838;
-        border-radius: 12px 0  0 12px;
-        gap: 20px;
-        transition: .5s ease;
-    }
     .nav-links a{
-        border-bottom: 2px solid var(--a-color);
+        font-size: 16px;
     }
     .blog-content h1{
         font-size:  22px;
